@@ -24,12 +24,12 @@ object InitialData {
   def insert(): Unit = {
     DB.withTransaction { implicit s: Session =>
       try{
-        Computers.count
+        Szervezets.count
       } catch {
-        case _:SQLException =>
+        case _:SQLException => 
           sql"runscript from 'conf/schema.sql'".as[Int].first
       }
-      if (Computers.count == 0) {
+      /*if (Computers.count == 0) {
         Seq(
           Company("Apple Inc.", Option(1)),
           Company("Thinking Machines", Option(2)),
@@ -653,7 +653,7 @@ object InitialData {
             Computers.insert(co)
           } catch { case e:Exception => throw new Exception(co.toString + e.getMessage) }
           )
-      }
+      }*/
     }
   }
 }

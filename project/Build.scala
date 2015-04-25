@@ -6,6 +6,7 @@ import play.PlayScala
 import play.twirl.sbt.Import._
 
 object mdeBuild extends Build {
+  javaOptions ++= Seq("-Xmx512M", "-Xmx2048M", "-XX:MaxPermSize=2048M")
   /** main project containing main source code depending on slick and codegen project */
   lazy val mainProject = Project(
     id="computer-database-mde",

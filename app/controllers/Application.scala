@@ -19,7 +19,7 @@ import scala.util.Try
  */
 object Application extends Controller { 
   def listRedirect(modelName: String) = Redirect(routes.Application.list(modelName, 0, 2, ""))
-  def index = Action { listRedirect(Computers.labels.singular) }
+  def index = Action { listRedirect(Szervezets.labels.singular) }
   
   /**
    * Display the paginated list of computers.
