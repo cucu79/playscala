@@ -1,2 +1,0 @@
-# playscala
-play scala
